@@ -27,8 +27,3 @@ npm start
 
 The frontend will be running at http://localhost:4200/
 
-That's it! The backend and frontend will be running locally with all dependencies installed.
-
----
-
-> For more details about deployment, environment variables, or advanced structure, check the internal project documentation.
