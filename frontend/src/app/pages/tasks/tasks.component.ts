@@ -47,9 +47,7 @@ export class TasksComponent implements OnInit {
           })).sort((a, b) =>
             new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
           );
-          console.log(this.tasks);
-        },
-        error: (error) => console.error('Error loading tasks:', error)
+        }
       });
     }
   }
@@ -67,8 +65,7 @@ export class TasksComponent implements OnInit {
         next: () => {
           this.newTask = { title: '', description: '' };
           this.loadTasks();
-        },
-        error: (error) => console.error('Error creating task:', error)
+        }
       });
     }
   }
@@ -79,16 +76,14 @@ export class TasksComponent implements OnInit {
     };
 
     this.taskService.updateTask(task.id, updatedTask).subscribe({
-      next: () => this.loadTasks(),
-      error: (error) => console.error('Error updating task:', error)
+      next: () => this.loadTasks()
     });
   }
 
   deleteTask(id: string) {
     if (confirm('Are you sure you want to delete this task?')) {
       this.taskService.deleteTask(id).subscribe({
-        next: () => this.loadTasks(),
-        error: (error) => console.error('Error deleting task:', error)
+        next: () => this.loadTasks()
       });
     }
   }
@@ -111,8 +106,7 @@ export class TasksComponent implements OnInit {
         next: () => {
           this.editingTask = null;
           this.loadTasks();
-        },
-        error: (error) => console.error('Error updating task:', error)
+        }
       });
     }
   }

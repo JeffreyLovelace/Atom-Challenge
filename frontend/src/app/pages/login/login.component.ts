@@ -38,9 +38,7 @@ export class LoginComponent {
                     if (error.status === 404) {
                         this.pendingEmail = email;
                         this.showPopup = true;
-                    } else {
-                        console.error('Error signing in:', error);
-                    }
+                    } 
                 }
             });
         }
