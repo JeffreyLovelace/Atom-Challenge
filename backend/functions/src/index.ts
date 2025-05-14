@@ -7,11 +7,15 @@ import './config/firebase.config';
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: [
+        'https://atom-challenge-77faa.web.app',
+        'http://localhost:4200'
+    ]
+}));
 app.use(express.json());
 
 app.use('/users', userRouter);
 app.use('/tasks', taskRouter);
 
-// Exporta la app como una función HTTP de Firebase
 export const api = functions.https.onRequest(app); 
