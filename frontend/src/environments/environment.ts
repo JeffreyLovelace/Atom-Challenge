@@ -1,4 +1,4 @@
 export const environment = {
-    production: false,
-    apiUrl: 'http://localhost:3000'
+  production: true,
+  apiUrl: 'https://us-central1-atom-challenge-77faa.cloudfunctions.net/api'
 };
